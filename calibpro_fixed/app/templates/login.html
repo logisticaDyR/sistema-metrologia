@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tatronics — Iniciar Sesión</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0a0e17;--bg2:#0f1520;--card:#111827;--border:#1e2d45;--accent:#00d4aa;--accent2:#0095ff;--text:#e2e8f0;--text2:#94a3b8;--text3:#4a5568;--danger:#ef4444;--glow:0 0 20px rgba(0,212,170,0.2);--glow2:0 0 30px rgba(0,149,255,0.15);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Lato',sans-serif;min-height:100vh;display:flex;flex-direction:column;
+    background-image:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,149,255,0.08),transparent 70%),radial-gradient(ellipse 60% 50% at 80% 100%,rgba(0,212,170,0.06),transparent 60%);}
+
+  /* ── NAVBAR ── */
+  header{background:rgba(15,21,32,0.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:14px 24px;}
+  .nav-brand{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
+  .nav-brand span{color:var(--accent);}
+  .nav-links{list-style:none;display:flex;gap:4px;align-items:center;}
+  .nav-links li a{color:var(--text2);text-decoration:none;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;transition:.2s;}
+  .nav-links li a:hover{color:var(--accent);background:rgba(0,212,170,.08);}
+  .nav-links li a.nav-active{color:var(--accent);background:rgba(0,212,170,.12);border:1px solid rgba(0,212,170,.2);}
+
+  /* ── CONTENIDO ── */
+  .main-content{flex:1;display:flex;align-items:center;justify-content:center;padding:32px 20px;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;max-width:960px;width:100%;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:0 40px 80px rgba(0,0,0,0.6),var(--glow2);animation:fadeUp .7s ease;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+  .visual{background:linear-gradient(135deg,#0a1628,#0d2040,#091830);padding:48px 40px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+  .visual::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(0,212,170,0.03) 40px,rgba(0,212,170,0.03) 41px),repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(0,212,170,0.03) 40px,rgba(0,212,170,0.03) 41px);}
+  .brand{position:relative;z-index:1;}
+  .brand-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:var(--glow);margin-bottom:14px;}
+  .brand-name{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:#fff;}
+  .brand-name span{color:var(--accent);}
+  .brand-tag{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-top:4px;}
+  .brand-desc{font-size:13px;color:var(--text2);line-height:1.7;margin-top:14px;}
+  .stats{position:relative;z-index:1;display:flex;gap:28px;}
+  .stat-val{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--accent);}
+  .stat-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;}
+  .form-wrap{background:var(--card);padding:48px 40px;display:flex;flex-direction:column;justify-content:center;}
+  h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin-bottom:6px;}
+  .subtitle{font-size:13px;color:var(--text2);margin-bottom:28px;}
+  .fg{margin-bottom:18px;}
+  label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text2);margin-bottom:7px;}
+  input,select{width:100%;padding:11px 14px;background:#141c2e;border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'Lato',sans-serif;font-size:14px;transition:all .2s;outline:none;}
+  input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,212,170,.1);}
+  select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer;}
+  select option{background:#141c2e;color:var(--text);}
+  .btn{width:100%;padding:13px;border:none;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-family:'Lato',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:4px;}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 8px 25px rgba(0,212,170,.35);}
+  .btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+  .error{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:var(--danger);padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:14px;}
+  .help{font-size:12px;color:var(--text3);margin-top:16px;text-align:center;}
+  .creds{background:#141c2e;border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-top:14px;font-size:12px;font-family:'DM Mono',monospace;color:var(--text2);line-height:1.8;}
+  .creds b{color:var(--accent);}
+  @media(max-width:700px){.grid{grid-template-columns:1fr;}.visual{display:none;}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/" class="nav-brand">Tatronics</a>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="{{ url_for('auth.login') }}" class="nav-active">Iniciar sesión</a></li>
+      <li><a href="/registro">Registro</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="main-content">
+  <div class="grid">
+    <div class="visual">
+      <div class="brand">
+        <div class="brand-icon">⚙️</div>
+        <div class="brand-name">Tatronics</div>
+        <div class="brand-tag">Metrology System v4.2</div>
+        <div class="brand-desc">Plataforma integral para gestión, diagnóstico y certificación de calibración de instrumentos de medición industriales. Cumplimiento ISO/IEC 17025 y OIML.</div>
+      </div>
+      <div>
+        <div class="brand-tag" style="margin-bottom:12px;">Sistema activo</div>
+        <div class="stats">
+          <div><div class="stat-val">7</div><div class="stat-lbl">Equipos</div></div>
+          <div><div class="stat-val">4</div><div class="stat-lbl">Patrones</div></div>
+          <div><div class="stat-val">3</div><div class="stat-lbl">Labs cert.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="form-wrap">
+      <h2>Iniciar Sesión</h2>
+      <p class="subtitle">Ingresa tus credenciales para acceder al sistema</p>
+      {% if error %}<div class="error">⚠️ {{ error }}</div>{% endif %}
+      <form id="login-form" method="POST" action="{{ url_for('auth.login') }}">
+        <div class="fg">
+          <label>Correo institucional</label>
+          <input type="email" name="email" value="admin@tatronicsperu.com" required placeholder="usuario@empresa.com">
+        </div>
+        <div class="fg">
+          <label>Contraseña</label>
+          <input type="password" name="password" value="admin123" required placeholder="••••••••">
+        </div>
+        <div class="fg">
+          <label>Laboratorio / Sede</label>
+          <select name="laboratorio">
+            <option>Lab. Central — Lima</option>
+            <option>Lab. Norte — Trujillo</option>
+            <option>Lab. Sur — Arequipa</option>
+          </select>
+        </div>
+        <button class="btn" type="submit" id="login-btn">🔐 Acceder al sistema</button>
+      </form>
+      <div class="creds">
+        <b>Cuentas de prueba:</b><br>
+        admin@tatronicsperu.com / <b>admin123</b> (Administrador)<br>
+        jefe@tatronicsperu.com / <b>jefe123</b> (Jefe de Lab.)<br>
+        tecnico@tatronicsperu.com / <b>tecnico123</b> (Técnico)
+      </div>
+      <p class="help">¿No tienes cuenta? <a href="/registro" style="color:var(--accent)">Regístrate aquí</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

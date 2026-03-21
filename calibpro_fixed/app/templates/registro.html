@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tatronics — Registro</title>
+    <link rel="stylesheet" href="/static/css/registro.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Syne:wght@500;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <header>
+      <nav>
+        <a href="/" class="nav-brand">Tatronics</a>
+        <ul class="nav-links">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="{{ url_for('auth.login') }}">Iniciar sesión</a></li>
+          <li><a href="/registro" class="nav-active">Registro</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <div class="registro-container">
+
+        <div class="panel-info">
+          <h1>Tatronics</h1>
+          <p>Sistema profesional para gestión de calibraciones, equipos de laboratorio y automatización industrial.</p>
+          <img src="https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b" alt="Ingeniería" />
+        </div>
+
+        <div class="panel-form">
+          <h2>Registro de usuario</h2>
+          <p class="sub">Crea tu cuenta para acceder al sistema</p>
+
+          {% if error %}
+          <div class="error-msg">⚠️ {{ error }}</div>
+          {% endif %}
+
+          <form method="POST" action="{{ url_for('registro.registro') }}">
+
+            <div class="campo">
+              <label>Nombre completo</label>
+              <input type="text" name="usuario" placeholder="Juan Pérez" required />
+            </div>
+
+            <div class="campo">
+              <label>Correo institucional</label>
+              <input type="email" name="email" placeholder="usuario@empresa.com" required />
+            </div>
+
+            <div class="campo">
+              <label>Contraseña</label>
+              <input type="password" name="password" placeholder="••••••••" required />
+            </div>
+
+            <div class="campo">
+              <label>Rol</label>
+              <div class="select-wrap">
+                <select name="rol">
+                  <option value="tecnico">Técnico</option>
+                  <option value="jefe">Jefe de Laboratorio</option>
+                  <option value="admin">Administrador</option>
+                </select>
+                <span class="select-arrow">▾</span>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label>Laboratorio / Sede</label>
+              <div class="select-wrap">
+                <select name="laboratorio">
+                  <option value="Lab. Central">Lab. Central — Lima</option>
+                  <option value="Lab. Norte">Lab. Norte — Trujillo</option>
+                  <option value="Lab. Sur">Lab. Sur — Arequipa</option>
+                </select>
+                <span class="select-arrow">▾</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn">Crear cuenta</button>
+          </form>
+
+          <p class="volver">
+            ¿Ya tienes cuenta?
+            <a href="{{ url_for('auth.login') }}">Iniciar sesión</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
