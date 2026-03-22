@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Tatronics{% endblock %}</title>
+
+    <link rel="stylesheet" href="/static/css/login2.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    {% include '/base/header.html' %}
+    <section id="clientes">
+      <h2>Nuestros Clientes</h2>
+
+      <p>
+        En nuestros años de servicio hemos trabajado con varias empresas en lima
+        y provincias, desde negocios pequeños hasta multinacionales.
+      </p>
+
+      <div
+        class="carousel-container"
+        style="
+          position: relative;
+          max-width: 1000px;
+          margin: 20px auto;
+          overflow: hidden;
+        "
+      >
+        <div class="carousel-slide">
+          <div class="slide">
+            <img src="/static/img/clientes/clinica-san-vicente.png" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/comacsa.png" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/hospital-cayetano.png" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/INACAL.png" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/Ingredion.svg" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/kimberly-clark.jpg" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/laboratorio-markos.png" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/microbiol.jpg" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/UNMSM.png" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/UNTRMA.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+    <!-- CONTENIDO DINÁMICO -->
+    <main>{% block contenido %} {% endblock %}</main>
+
+    <!-- FOOTER -->
+    {% include '/base/footer.html' %}
+  </body>
+  <script>
+    let index = 0;
+
+    const slides = document.querySelectorAll(".slide");
+    const container = document.querySelector(".carousel-slide");
+
+    function showSlide() {
+      container.style.transform = "translateX(" + -index * 100 + "%)";
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide();
+    }
+
+    // Auto carrusel
+    setInterval(() => {
+      nextSlide();
+    }, 3000);
+  </script>
+</html>

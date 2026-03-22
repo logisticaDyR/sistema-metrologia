@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Tatronics{% endblock %}</title>
+
+  <link rel="stylesheet" href="/static/css/login2.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  {% include '/base/header.html' %}
+
+  <!-- CONTENIDO DINÁMICO -->
+  <main>
+    {% block contenido %}
+    {% endblock %}
+  </main>
+<section id="inicio" class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Bienvenido a
+          <img src="/static/img/logo.png" alt="Logo" class="logo-inline" />
+        </h1>
+
+        <p class="hero-subtitle">
+          Soluciones tecnológicas para laboratorios e industria.
+        </p>
+
+        <p class="hero-description">
+          Sistema profesional de gestión de calibraciones.
+        </p>
+      </div>
+      <div class="hero-image">
+        <img src="/static/img/portada.jpg" alt="Portada" />
+      </div>
+    </section>
+
+  <!-- FOOTER -->
+  {% include '/base/footer.html' %}
+
+</body>
+</html>

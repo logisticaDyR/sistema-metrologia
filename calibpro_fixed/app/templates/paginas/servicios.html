@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Tatronics{% endblock %}</title>
+
+    <link rel="stylesheet" href="/static/css/login2.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    {% include '/base/header.html' %}
+
+    
+    <section id="equipos">
+      <h2>Equipos que calibramos</h2>
+
+      <div class="equipos-grid">
+        
+        <div class="card">
+          <img
+            src="/static/img/equipos/termometro.jpg"
+            alt="Calibración de termómetros"
+          />
+          <h3>Termómetros</h3>
+          <p>
+            Calibración de termómetros digitales, infrarrojos y de laboratorio
+            para mediciones precisas.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="/static/img/equipos/balanza.jpg"
+            alt="Calibración de balanzas"
+          />
+          <h3>Balanzas</h3>
+          <p>
+            Verificación y ajuste de balanzas analíticas, industriales y
+            comerciales.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="/static/img/equipos/manometro.jpg"
+            alt="Calibración de manómetros"
+          />
+          <h3>Manómetros</h3>
+          <p>
+            Calibración de instrumentos de presión para procesos industriales.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="/static/img/equipos/autoclave.webp"
+            alt="Calibración de autoclaves"
+          />
+          <h3>Autoclaves</h3>
+          <p>Validación y calibración para procesos de esterilización.</p>
+        </div>
+
+        <div class="card">
+          <img
+            src="/static/img/equipos/centrifuga.jpg"
+            alt="Calibración de centrifugas"
+          />
+          <h3>Centrífugas</h3>
+          <p>
+            Calibración y mantenimiento de centrifugas para uso en laboratorio.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="/static/img/equipos/baño-calibracion.jpg"
+            alt="Calibración de baño María"
+          />
+          <h3>Baños María</h3>
+          <p>Equipos de temperatura constante para procesos químicos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <h2>Nuestros Servicios</h2>
+
+      <div class="servicios-grid">
+        <div class="card">
+          <img
+            src="/static/img/servicios/ingenieria.jpg"
+            width="100%"
+            height="350px"
+            style="border-radius: 10px; margin-bottom: 10px"
+          />
+
+          <h3>Diseño y Ingeniería</h3>
+
+          <p>
+            Desarrollo de soluciones tecnológicas a medida, incluyendo diseño de
+            equipos, prototipos funcionales y sistemas especializados para
+            laboratorio e industria.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="/static/img/servicios/automatizacion.jpg"
+            width="100%"
+            height="350px"
+            style="border-radius: 10px; margin-bottom: 10px"
+          />
+
+          <h3>Automatización</h3>
+
+          <p>
+            Implementación y optimización de sistemas automatizados para equipos
+            de laboratorio, mejorando la eficiencia, precisión y control de
+            procesos.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="/static/img/servicios/mantenimiento.jpg"
+            width="100%"
+            height="350px"
+            style="border-radius: 10px; margin-bottom: 10px"
+          />
+
+          <h3>Mantenimiento</h3>
+
+          <p>
+            Servicio integral de mantenimiento y reparación de equipos,
+            garantizando su correcto funcionamiento mediante diagnóstico,
+            calibración y soporte técnico especializado.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENIDO DINÁMICO -->
+    <main>{% block contenido %} {% endblock %}</main>
+
+    <!-- FOOTER -->
+    {% include '/base/footer.html' %}
+  </body>
+</html>

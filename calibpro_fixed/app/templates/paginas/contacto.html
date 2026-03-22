@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Tatronics{% endblock %}</title>
+
+    <link rel="stylesheet" href="/static/css/login2.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    {% include '/base/header.html' %}
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+
+      <div class="contacto-box">
+        <p><b>Teléfono:</b> 963 727 835</p>
+
+        <p><b>Email:</b> administracion@tatronicsperu.com</p>
+
+        <p><b>Web:</b> www.tatronicsperu.com</p>
+      </div>
+    </section>
+
+    <section id="ubicacion">
+      <h2>Ubicación</h2>
+
+      <div class="ubicacion-box">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7798.40241998328!2d-76.94038434406974!3d-12.234651321728332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105bbd9e95dcd3b%3A0xbc4b7e621bb53b85!2sTatronics%20Sac!5e0!3m2!1ses-419!2spe!4v1774156992154!5m2!1ses-419!2spe"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+    
+    <!-- CONTENIDO DINÁMICO -->
+    <main>{% block contenido %} {% endblock %}</main>
+
+    <!-- FOOTER -->
+    {% include '/base/footer.html' %}
+  </body>
+</html>

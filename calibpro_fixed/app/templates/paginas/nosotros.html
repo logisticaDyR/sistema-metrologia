@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Tatronics{% endblock %}</title>
+
+    <link rel="stylesheet" href="/static/css/login2.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    {% include '/base/header.html' %}
+    <section id="nosotros">
+      <h2>Quiénes Somos</h2>
+
+      <p>
+        Somos una empresa especializada en el desarrollo de proyectos
+        electrónicos, eléctricos y mecánicos para laboratorios e industria.
+      </p>
+
+      <p>
+        Brindamos servicios de mantenimiento, reparación, automatización y
+        fabricación de equipos especializados.
+      </p>
+    </section>
+
+    
+    <!-- CONTENIDO DINÁMICO -->
+    <main>{% block contenido %} {% endblock %}</main>
+
+    <!-- FOOTER -->
+    {% include '/base/footer.html' %}
+  </body>
+</html>
