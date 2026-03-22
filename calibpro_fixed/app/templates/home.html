@@ -1,187 +1,235 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-<meta charset="UTF-8">
-<title>Tatronics Perú</title>
-
-<link rel="stylesheet" href="/static/css/login2.css">
-
-</head>
-
-<body>
-
-<header>
-<nav>
-
-<h2>Tatronics</h2>
-
-<ul>
-<li><a href="#inicio">Inicio</a></li>
-<li><a href="#nosotros">Nosotros</a></li>
-<li><a href="#servicios">Servicios</a></li>
-<li><a href="#clientes">Clientes</a></li>
-<li><a href="#contacto">Contacto</a></li>
-<li><a href="{{ url_for('auth.login') }}">Login</a></li>
-<li><a href="/registro">Registro</a></li>
-</ul>
-
-</nav>
-</header>
-
-
-<!-- HERO -->
-
-<section id="inicio">
-
-<h1>Bienvenido a <strong>Tatronics</strong></h1>
-
-<p>Soluciones tecnológicas para laboratorios e industria.</p>
-
-<p>Sistema profesional de gestión de calibraciones.</p>
-
-<a class="btn" href="{{ url_for('auth.login') }}">Iniciar sesión</a>
-<a class="btn" href="{{ url_for('registro.registro') }}">Crear cuenta</a>
-
-<br><br>
-
-<img src="https://images.unsplash.com/photo-1581092921461-39b0f0b3b2c6"
-width="420"
-style="border-radius:14px;border:1px solid var(--border);box-shadow:var(--glow2);">
-
-</section>
-
-
-<!-- NOSOTROS -->
-
-<section id="nosotros">
-
-<h2>Quiénes Somos</h2>
-
-<p>
-Somos una empresa especializada en el desarrollo de proyectos
-electrónicos, eléctricos y mecánicos para laboratorios e industria.
-</p>
-
-<p>
-Brindamos servicios de mantenimiento, reparación, automatización
-y fabricación de equipos especializados.
-</p>
-
-</section>
-
-
-<!-- SERVICIOS -->
-
-<section id="servicios">
-
-<h2>Nuestros Servicios</h2>
-
-<div class="servicios-grid">
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b"
-width="100%"
-style="border-radius:10px;margin-bottom:10px;">
-
-<h3>Ingeniería</h3>
-
-<ul>
-<li>Diseño de equipos</li>
-<li>Prototipos</li>
-<li>Desarrollo tecnológico</li>
-<li>Equipos de laboratorio</li>
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1581091870627-3c3b20bb3c4f"
-width="100%"
-style="border-radius:10px;margin-bottom:10px;">
-
-<h3>Automatización</h3>
-
-<ul>
-<li>Autoclave</li>
-<li>Incubadoras</li>
-<li>Baño María</li>
-<li>Refrigeradores</li>
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232"
-width="100%"
-style="border-radius:10px;margin-bottom:10px;">
-
-<h3>Mantenimiento</h3>
-
-<ul>
-<li>Reparación de equipos</li>
-<li>Mantenimiento preventivo</li>
-<li>Calibraciones</li>
-<li>Diagnóstico técnico</li>
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CLIENTES -->
-
-<section id="clientes">
-
-<h2>Nuestros Clientes</h2>
-
-<div class="clientes">
-
-<div class="cliente">Laboratorios Clínicos</div>
-<div class="cliente">Industria</div>
-<div class="cliente">Universidades</div>
-<div class="cliente">Centros de Investigación</div>
-
-</div>
-
-</section>
-
-
-<!-- CONTACTO -->
-
-<section id="contacto">
-
-<h2>Contacto</h2>
-
-<div class="contacto-box">
-
-<p><b>Teléfono:</b> 963 727 835</p>
-
-<p><b>Email:</b> administracion@tatronicsperu.com</p>
-
-<p><b>Web:</b> www.tatronicsperu.com</p>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 Tatronics Perú</p>
-<p>Un mundo de soluciones</p>
-
-</footer>
-
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tatronics Perú</title>
+
+    <link rel="stylesheet" href="/static/css/login2.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h2>Tatronics</h2>
+
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#clientes">Clientes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+          <li><a href="/registro">Registro</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+
+    <section id="inicio">
+      <h1>Bienvenido a <strong>Tatronics</strong></h1>
+
+      <p>Soluciones tecnológicas para laboratorios e industria.</p>
+
+      <p>Sistema profesional de gestión de calibraciones.</p>
+
+      <a class="btn" href="{{ url_for('auth.login') }}">Iniciar sesión</a>
+      <a class="btn" href="{{ url_for('registro.registro') }}">Crear cuenta</a>
+
+      <br /><br />
+
+      <img
+        src="/static/img/portada.jpg"
+        width="100%"
+        style="border-radius: 10px; margin-bottom: 10px"
+      />
+    </section>
+
+    <!-- NOSOTROS -->
+
+    <section id="nosotros">
+      <h2>Quiénes Somos</h2>
+
+      <p>
+        Somos una empresa especializada en el desarrollo de proyectos
+        electrónicos, eléctricos y mecánicos para laboratorios e industria.
+      </p>
+
+      <p>
+        Brindamos servicios de mantenimiento, reparación, automatización y
+        fabricación de equipos especializados.
+      </p>
+    </section>
+
+    <!-- SERVICIOS -->
+
+    <section id="servicios">
+      <h2>Nuestros Servicios</h2>
+
+      <div class="servicios-grid">
+        <div class="card">
+          <img
+            src="/static/img/servicios/ingenieria.jpg"
+            width="100%"
+            height="350px"
+            style="border-radius: 10px; margin-bottom: 10px"
+          />
+
+          <h3>Diseño y Ingeniería</h3>
+
+          <ul>
+            <li>Diseño de equipos</li>
+            <li>Prototipos</li>
+            <li>Desarrollo tecnológico</li>
+            <li>Equipos de laboratorio</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <img
+            src="/static/img/servicios/automatizacion.jpg"
+            width="100%"
+            height="350px"
+            style="border-radius: 10px; margin-bottom: 10px"
+          />
+
+          <h3>Automatización</h3>
+
+          <ul>
+            <li>Autoclave</li>
+            <li>Incubadoras</li>
+            <li>Baño María</li>
+            <li>Refrigeradores</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <img
+            src="/static/img/servicios/mantenimiento.jpg"
+            width="100%"
+            height="350px"
+            style="border-radius: 10px; margin-bottom: 10px"
+          />
+
+          <h3>Mantenimiento</h3>
+
+          <ul>
+            <li>Reparación de equipos</li>
+            <li>Mantenimiento preventivo</li>
+            <li>Mantenimiento correctivo</li>
+            <li>Calibraciones</li>
+            <li>Diagnóstico técnico</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTES -->
+
+    <section id="clientes">
+      <h2>Nuestros Clientes</h2>
+
+      <p>
+        En nuestros años de servicio hemos trabajado con varias empresas en lima
+        y provincias, desde negocios pequeños hasta multinacionales.
+      </p>
+
+      <div
+        class="carousel-container"
+        style="
+          position: relative;
+          max-width: 1000px;
+          margin: 20px auto;
+          overflow: hidden;
+        "
+      >
+        <div class="carousel-slide">
+          <div class="slide">
+            <img src="/static/img/clientes/clinica-san-vicente.png" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/comacsa.png" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/hospital-cayetano.png" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/INACAL.png" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/Ingredion.svg" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/kimberly-clark.jpg" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/laboratorio-markos.png" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/microbiol.jpg" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/UNMSM.png" />
+          </div>
+
+          <div class="slide">
+            <img src="/static/img/clientes/UNTRMA.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+
+      <div class="contacto-box">
+        <p><b>Teléfono:</b> 963 727 835</p>
+
+        <p><b>Email:</b> administracion@tatronicsperu.com</p>
+
+        <p><b>Web:</b> www.tatronicsperu.com</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Tatronics Perú</p>
+      <p>Un mundo de soluciones</p>
+    </footer>
+  </body>
+
+  <script>
+    let index = 0;
+
+    const slides = document.querySelectorAll(".slide");
+    const container = document.querySelector(".carousel-slide");
+
+    function showSlide() {
+      container.style.transform = "translateX(" + -index * 100 + "%)";
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide();
+    }
+
+    // Auto carrusel
+    setInterval(() => {
+      nextSlide();
+    }, 3000);
+  </script>
 </html>
