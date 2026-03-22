@@ -10,7 +10,7 @@
   <body>
     <header>
       <nav>
-        <h2>Tatronics</h2>
+        <img src="/static/img/logo.png" width="150px" />
 
         <ul>
           <li><a href="#inicio">Inicio</a></li>
@@ -26,23 +26,24 @@
 
     <!-- HERO -->
 
-    <section id="inicio">
-      <h1>Bienvenido a <strong>Tatronics</strong></h1>
+    <section id="inicio" class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Bienvenido a
+          <img src="/static/img/logo.png" alt="Logo" class="logo-inline" />
+        </h1>
 
-      <p>Soluciones tecnológicas para laboratorios e industria.</p>
+        <p class="hero-subtitle">
+          Soluciones tecnológicas para laboratorios e industria.
+        </p>
 
-      <p>Sistema profesional de gestión de calibraciones.</p>
-
-      <a class="btn" href="{{ url_for('auth.login') }}">Iniciar sesión</a>
-      <a class="btn" href="{{ url_for('registro.registro') }}">Crear cuenta</a>
-
-      <br /><br />
-
-      <img
-        src="/static/img/portada.jpg"
-        width="100%"
-        style="border-radius: 10px; margin-bottom: 10px"
-      />
+        <p class="hero-description">
+          Sistema profesional de gestión de calibraciones.
+        </p>
+      </div>
+      <div class="hero-image">
+        <img src="/static/img/portada.jpg" alt="Portada" />
+      </div>
     </section>
 
     <!-- NOSOTROS -->
@@ -60,6 +61,50 @@
         fabricación de equipos especializados.
       </p>
     </section>
+
+    <section id="equipos">
+  <h2>Equipos que calibramos</h2>
+
+  <div class="equipos-grid">
+
+    <div class="card">
+      <img src="/static/img/equipos/termometro.jpg" alt="Calibración de termómetros" />
+      <h3>Termómetros</h3>
+      <p>Calibración de termómetros digitales, infrarrojos y de laboratorio para mediciones precisas.</p>
+    </div>
+
+    <div class="card">
+      <img src="/static/img/equipos/balanza.jpg" alt="Calibración de balanzas" />
+      <h3>Balanzas</h3>
+      <p>Verificación y ajuste de balanzas analíticas, industriales y comerciales.</p>
+    </div>
+
+    <div class="card">
+      <img src="/static/img/equipos/manometro.jpg" alt="Calibración de manómetros" />
+      <h3>Manómetros</h3>
+      <p>Calibración de instrumentos de presión para procesos industriales.</p>
+    </div>
+
+    <div class="card">
+      <img src="/static/img/equipos/autoclave.jpg" alt="Calibración de autoclaves" />
+      <h3>Autoclaves</h3>
+      <p>Validación y calibración para procesos de esterilización.</p>
+    </div>
+
+    <div class="card">
+      <img src="/static/img/equipos/incubadora.jpg" alt="Calibración de incubadoras" />
+      <h3>Incubadoras</h3>
+      <p>Control de temperatura para uso clínico y laboratorio.</p>
+    </div>
+
+    <div class="card">
+      <img src="/static/img/equipos/bano_maria.jpg" alt="Calibración de baño María" />
+      <h3>Baños María</h3>
+      <p>Equipos de temperatura constante para procesos químicos.</p>
+    </div>
+
+  </div>
+</section>
 
     <!-- SERVICIOS -->
 
@@ -184,6 +229,18 @@
             <img src="/static/img/clientes/UNTRMA.png" />
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="ubicacion">
+      <h2>Ubicación</h2>
+
+      <div class="ubicacion-box">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7798.40241998328!2d-76.94038434406974!3d-12.234651321728332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105bbd9e95dcd3b%3A0xbc4b7e621bb53b85!2sTatronics%20Sac!5e0!3m2!1ses-419!2spe!4v1774156992154!5m2!1ses-419!2spe"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
       </div>
     </section>
 
