@@ -4,7 +4,7 @@ Auth helper functions
 import hashlib
 from functools import wraps
 from flask import session, redirect, url_for, jsonify, request
-from app.models.database import query, execute, row_to_dict
+from .database import query, execute, row_to_dict
 
 
 def hash_password(pw: str) -> str:

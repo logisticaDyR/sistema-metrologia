@@ -2,8 +2,8 @@
 Clientes Blueprint
 """
 from flask import Blueprint, request, jsonify
-from app.models.auth import login_required, log_action
-from app.models.database import query, execute, rows_to_list, row_to_dict
+from calibpro_fixed.app.models.auth import login_required, log_action
+from calibpro_fixed.app.models.database import query, execute, rows_to_list, row_to_dict
 
 clientes_bp = Blueprint('clientes', __name__)
 

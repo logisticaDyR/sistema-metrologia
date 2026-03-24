@@ -2,8 +2,8 @@
 Dashboard Blueprint
 """
 from flask import Blueprint, render_template, session, jsonify
-from app.models.auth import login_required
-from app.models.database import query, rows_to_list
+from calibpro_fixed.app.models.auth import login_required
+from calibpro_fixed.app.models.database import query, rows_to_list
 
 dashboard_bp = Blueprint('dashboard', __name__)
 

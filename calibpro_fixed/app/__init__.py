@@ -15,19 +15,19 @@ def create_app(config_name='default'):
     os.makedirs(os.path.dirname(app.config['DATABASE_PATH']), exist_ok=True)
 
     # ── Initialize DB
-    from app.models.database import init_db
+    from .models.database import init_db
     init_db(app.config['DATABASE_PATH'])
 
     # ── Register Blueprints
-    from app.routes.auth      import auth_bp
-    from app.routes.dashboard import dashboard_bp
-    from app.routes.diagnostico import diagnostico_bp
-    from app.routes.equipos   import equipos_bp
-    from app.routes.clientes  import clientes_bp
-    from app.routes.reportes  import reportes_bp
-    from app.routes.api       import api_bp
-    from app.routes.home import home_bp
-    from app.routes.registro import registro_bp
+    from .routes.auth      import auth_bp
+    from .routes.dashboard import dashboard_bp
+    from .routes.diagnostico import diagnostico_bp
+    from .routes.equipos   import equipos_bp
+    from .routes.clientes  import clientes_bp
+    from .routes.reportes  import reportes_bp
+    from .routes.api       import api_bp
+    from .routes.home import home_bp
+    from .routes.registro import registro_bp
     
     app.register_blueprint(home_bp)
     app.register_blueprint(registro_bp)

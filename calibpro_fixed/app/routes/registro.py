@@ -1,6 +1,6 @@
 import hashlib
 from flask import Blueprint, render_template, request, redirect, url_for
-from app.models.database import execute, query
+from calibpro_fixed.app.models.database import execute, query
 
 registro_bp = Blueprint('registro', __name__)
 

@@ -2,7 +2,7 @@
 Auth Blueprint — /login  /logout
 """
 from flask import Blueprint, request, session, redirect, url_for, render_template, jsonify
-from app.models.auth import login_user, log_action
+from calibpro_fixed.app.models.auth import login_user, log_action
 
 auth_bp = Blueprint('auth', __name__, url_prefix='/auth')
 

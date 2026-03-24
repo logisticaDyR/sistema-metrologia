@@ -10,8 +10,8 @@ from datetime            import datetime
 
 from flask import (Blueprint, request, jsonify, current_app,
                    send_file, session)
-from app.models.auth     import login_required, log_action
-from app.models.database import query, execute, rows_to_list, row_to_dict
+from calibpro_fixed.app.models.auth     import login_required, log_action
+from calibpro_fixed.app.models.database import query, execute, rows_to_list, row_to_dict
 
 
 reportes_bp = Blueprint('reportes', __name__)

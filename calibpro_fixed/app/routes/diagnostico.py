@@ -5,8 +5,8 @@ import os, uuid, base64, json
 from datetime import datetime, date
 from flask import (Blueprint, request, session, jsonify,
                    render_template, current_app, send_file)
-from app.models.auth import login_required, log_action
-from app.models.database import query, execute, executemany, rows_to_list, row_to_dict
+from calibpro_fixed.app.models.auth import login_required, log_action
+from calibpro_fixed.app.models.database import query, execute, executemany, rows_to_list, row_to_dict
 
 diagnostico_bp = Blueprint('diagnostico', __name__)
 
