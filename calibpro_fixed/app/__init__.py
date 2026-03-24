@@ -19,15 +19,15 @@ def create_app(config_name='default'):
     init_db(app.config['DATABASE_PATH'])
 
     # ── Register Blueprints
-    from .routes.auth      import auth_bp
-    from .routes.dashboard import dashboard_bp
-    from .routes.diagnostico import diagnostico_bp
-    from .routes.equipos   import equipos_bp
-    from .routes.clientes  import clientes_bp
-    from .routes.reportes  import reportes_bp
-    from .routes.api       import api_bp
-    from .routes.home import home_bp
-    from .routes.registro import registro_bp
+    from calibpro_fixed.app.routes.auth      import auth_bp
+    from calibpro_fixed.app.routes.dashboard import dashboard_bp
+    from calibpro_fixed.app.routes.diagnostico import diagnostico_bp
+    from calibpro_fixed.app.routes.equipos   import equipos_bp
+    from calibpro_fixed.app.routes.clientes  import clientes_bp
+    from calibpro_fixed.app.routes.reportes  import reportes_bp
+    from calibpro_fixed.app.routes.api       import api_bp
+    from calibpro_fixed.app.routes.home import home_bp
+    from calibpro_fixed.app.routes.registro import registro_bp
     
     app.register_blueprint(home_bp)
     app.register_blueprint(registro_bp)
