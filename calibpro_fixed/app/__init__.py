@@ -15,7 +15,7 @@ def create_app(config_name='default'):
     os.makedirs(os.path.dirname(app.config['DATABASE_PATH']), exist_ok=True)
 
     # ── Initialize DB
-    from .models.database import init_db
+    from calibpro_fixed.app.models.database import init_db
     init_db(app.config['DATABASE_PATH'])
 
     # ── Register Blueprints
