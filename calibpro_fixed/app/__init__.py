@@ -3,7 +3,7 @@ Tatronics — App Factory
 """
 import os
 from flask import Flask
-from config import config
+from ..config import config
 
 
 def create_app(config_name='default'):
